@@ -1,0 +1,8 @@
+streamlit
+pypdf
+sentence-transformers
+faiss-cpu==1.7.4
+plotly
+pandas
+groq
+tiktoken
