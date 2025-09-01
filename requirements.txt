@@ -1,7 +1,7 @@
 streamlit
 pypdf
 sentence-transformers
-faiss-cpu==1.7.4
+faiss-cpu
 plotly
 pandas
 groq
