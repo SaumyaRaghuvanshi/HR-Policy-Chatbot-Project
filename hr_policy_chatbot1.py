@@ -560,6 +560,5 @@ def main():
 
     st.caption("Built for MBA project demos • Local FAISS + Groq LLM • Data stays on your machine (except LLM calls)")
 
-
-    if __name__ == "__main__":
+if __name__ == "__main__":
       main()
