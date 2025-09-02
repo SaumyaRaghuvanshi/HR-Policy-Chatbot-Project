@@ -237,7 +237,19 @@ def main():
 
     # --- Header / Welcome ---
     st.title("🧭 HR Policy Assistant Chatbot")
-    st.caption("Upload an HR policy PDF, build the index, and ask questions. Answers cite your document.")
+    st.markdown(
+        """
+        👋 Welcome to your **HR Policy Assistant**!
+        Here’s how you can use this app:
+        - 📄 Upload your HR policy PDF from the sidebar, or load the default sample.
+        - 🔍 Ask any HR-related questions (leave rules, benefits, code of conduct, etc.).
+        - 📚 Get answers backed by your HR documents with clear citations.
+        - ✅ Provide feedback on whether the answer was helpful.
+        - 💡 Suggest modifications or improvements to policies for review by the HR team.
+
+        Start by uploading a policy document or using the sample from the sidebar →
+        """
+    )
 
     ensure_dirs()
 
