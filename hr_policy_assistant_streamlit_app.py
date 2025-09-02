@@ -185,7 +185,7 @@ def get_groq_client():
 
 def call_llm_groq(client: Groq, system_prompt: str, user_prompt: str, model: str) -> str:
     if client is None:
-        return "[LLM disabled: set GROQ_API_KEY in environment or sidebar]")
+        return "[LLM disabled: set GROQ_API_KEY in environment or sidebar]"
     res = client.chat.completions.create(
         model=model,
         temperature=0.2,
