@@ -45,12 +45,12 @@ except Exception:
 # ------------------------------
 # Config
 # ------------------------------
-EMBED_MODEL_NAME = "sentence-transformers/paraphrase-MiniLM-L3-v2"  # tiny, safe
+EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"  
 CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 400
 INDEX_DIR = "./indexes"
 DOC_TEXT_DIR = os.path.join(INDEX_DIR, "doc_texts")
-DEFAULT_TOP_K = 5
+DEFAULT_TOP_K = 8
 
 # ------------------------------
 # Utilities
@@ -172,7 +172,11 @@ def call_llm(client, sys_prompt, user_prompt, model):
     )
     return res.choices[0].message.content
 
-SYSTEM_PROMPT = "You are an HR Policy Assistant. Answer using only CONTEXT. If not found, say so."
+SYSTEM_PROMPT = (
+    "You are an HR Policy Assistant. Use the CONTEXT to answer clearly and concisely. "
+    "If context is incomplete, combine multiple retrieved chunks or explain what is missing, "
+    "but do not just say 'not found'."
+)
 
 # ------------------------------
 # App
