@@ -46,8 +46,8 @@ except Exception:
 # Config
 # ------------------------------
 EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"  
-CHUNK_SIZE = 1200
-CHUNK_OVERLAP = 400
+CHUNK_SIZE = 1500
+CHUNK_OVERLAP = 200
 INDEX_DIR = "./indexes"
 DOC_TEXT_DIR = os.path.join(INDEX_DIR, "doc_texts")
 DEFAULT_TOP_K = 8
