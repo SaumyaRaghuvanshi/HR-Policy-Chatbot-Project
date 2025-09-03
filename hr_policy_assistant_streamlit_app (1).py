@@ -1,4 +1,4 @@
-pip install streamlit pypdf sentence-transformers faiss-cpu plotly pandas groq tiktoken
+#pip install streamlit pypdf sentence-transformers faiss-cpu plotly pandas groq tiktoken
 
 import os
 import io
