@@ -219,12 +219,28 @@ def main():
         if not index.load():
             st.error("Index not found")
             return
+
         qvec = embed_texts(embedder, [q])[0]
         hits = index.search(qvec)
-        context = "\n\n".join([m.preview for m, _ in hits])
+
+        context_parts = []
+        for m, _ in hits:
+            doc_text = load_doc_text(m.doc_id)
+            snippet = doc_text[m.start:m.end] if doc_text else m.preview
+
+            # --- NEW: stitch continuation if snippet is cut mid-sentence ---
+            if doc_text and not snippet.strip().endswith(('.', '!', '?')):
+                extra = doc_text[m.end:m.end+200]  # grab next ~200 chars
+                snippet += " " + extra.strip().replace("\n", " ")
+
+            context_parts.append(snippet)
+
+        context = "\n\n".join(context_parts)
+
         client = get_groq_client()
         ans = call_llm(client, SYSTEM_PROMPT, f"CONTEXT:\n{context}\n\nQ: {q}", "llama-3.1-8b-instant")
         st.write(ans)
+
 
 if __name__ == "__main__":
     main()
