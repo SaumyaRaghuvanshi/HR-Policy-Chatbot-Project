@@ -174,7 +174,7 @@ def call_llm(client, sys_prompt, user_prompt, model):
 
 SYSTEM_PROMPT = (
     "You are an HR Policy Assistant. Use the CONTEXT to answer clearly and concisely. "
-    "If context is incomplete, combine multiple retrieved chunks or explain what is missing, "
+    "If context is incomplete try combining nearby chunks to give a full answer., "
     "but do not just say 'not found'."
 )
 
