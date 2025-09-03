@@ -46,8 +46,8 @@ except Exception:
 # Config
 # ------------------------------
 EMBED_MODEL_NAME = "sentence-transformers/paraphrase-MiniLM-L3-v2"  # tiny, safe
-CHUNK_SIZE = 600
-CHUNK_OVERLAP = 150
+CHUNK_SIZE = 1200
+CHUNK_OVERLAP = 400
 INDEX_DIR = "./indexes"
 DOC_TEXT_DIR = os.path.join(INDEX_DIR, "doc_texts")
 DEFAULT_TOP_K = 5
