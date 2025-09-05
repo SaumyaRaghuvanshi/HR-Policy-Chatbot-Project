@@ -191,6 +191,9 @@ def main():
 
     ensure_dirs()
 
+    # 🔒 Define a fixed index name (hidden from user)
+    index_name = "hr_index"
+
     with st.sidebar:
         files = st.file_uploader("Upload HR PDFs", type="pdf", accept_multiple_files=True)
         #index_name = st.text_input("Index name", "hr_index")
@@ -199,7 +202,6 @@ def main():
             st.warning("⚠️ Please upload at least one PDF before processing.")
           else :
             embedder = get_embedder()
-            index_name = "hr_index"
             index = SimpleVectorIndex(os.path.join(INDEX_DIR, index_name + ".faiss"),
                                       embedder.get_sentence_embedding_dimension())
             index._create()
