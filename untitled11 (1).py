@@ -249,12 +249,6 @@ def main():
         embedder = get_embedder()
         index = SimpleVectorIndex(os.path.join(INDEX_DIR, index_name + ".faiss"),
                                   embedder.get_sentence_embedding_dimension())
-        """if not index.load():
-            st.error("Index not found")
-            return
-
-        qvec = embed_texts(embedder, [q])[0]
-        hits = index.search(qvec)"""
 
         # --- Quick HR relevance check (basic keyword-based) ---
         hr_keywords = ["leave", "holiday", "benefits", "working hours", "policy",
