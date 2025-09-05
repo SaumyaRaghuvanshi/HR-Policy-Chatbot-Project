@@ -232,7 +232,7 @@ def main():
     cols = st.columns(3)
     sample_questions = [
     "What are the official working hours?",
-    "How many earned leaves do I get?",
+    "How many earned leave do I get?",
     "What is the notice period for resignation?"
     ]
 
