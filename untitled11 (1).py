@@ -173,8 +173,8 @@ def append_csv(path: str, row: Dict[str, Any]):
 
 SYSTEM_PROMPT = (
     "You are an HR Policy Assistant. Use the CONTEXT to answer clearly and concisely. "
-    "If context is incomplete try combining nearby chunks to give a full answer., "
-    "but do not just say 'not found'.",
+    "If context is incomplete try combining nearby chunks to give a full answer, "
+    "but do not just say 'not found'."
     "If the context is irrelevant , respond clearly that you cannot answer because "
     "it is outside HR policy scope. Do not invent information."
 )
